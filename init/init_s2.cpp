@@ -123,7 +123,7 @@ void init_alarm_boot_properties()
 
 void vendor_load_properties() {
     char device[PROP_VALUE_MAX];
-    int isX520 = 7, isX522 = 10, isX526 = 8, isX527 = 5;
+    int isX520 = 0, isX522 = 0, isX526 = 0, isX527 = 0;
 
     if (read_file2(DEVINFO_FILE, device, sizeof(device)))
     {
@@ -167,7 +167,7 @@ void vendor_load_properties() {
     }
     else
     {
-        property_set("ro.product.model", "s2");
+        property_set("ro.product.model", "UNKNOWN");
     }
 
     init_alarm_boot_properties();
